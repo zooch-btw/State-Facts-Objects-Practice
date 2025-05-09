@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en-us">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -9,6 +10,7 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
 	<div class="outer-wrapper">
 		<header class="clearfix">
@@ -89,5 +91,16 @@
 			</div>
 		</div>
 	</div>
+	<script src="js/state-data.js"></script>
+	<script>
+		document.getElementById('state-list').onchange = function () {
+			var selected = this.value;
+			document.getElementById('info-pic').src = 'img/' + selected + '.jpg';
+			document.getElementById('info-name').textContent = stateData[selected].name;
+			document.getElementById('info-abbreviation').textContent = stateData[selected].abbr;
+			document.getElementById('info-capitol').textContent = stateData[selected].capitol;
+		};
+	</script>
 </body>
+
 </html>
